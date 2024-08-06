@@ -1,0 +1,139 @@
+.apply-job-sub-main {
+    margin: 130px 60px 30px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+}
+
+.apply-job {
+    margin: 10px;
+    width: 100%;
+    max-width: 1220px;
+}
+
+.apply-job .apply-job-banner {
+    display: grid;
+    gap: 18px;
+}
+
+.apply-job-banner .apply-job-card {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    background: #3c4c56;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 15px 30px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.apply-job-banner .apply-job-title {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    background: #3c4c56;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.apply-job-title-img img {
+    padding: 10px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin: 10px 35px 0 0;
+
+}
+
+.apply-job-title-text h1 {
+    font-size: 48px;
+    color: var(--main-color);
+    padding: 10px 10px 10px 0;
+}
+
+.apply-job-form-submit {
+    background: #DA68C8;
+    color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+    width: 140px;
+    height: 45px;
+    border: none;
+    font-size: 18px;
+}
+
+.apply-job-card {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.apply-job-info {
+    width: 70%;
+    padding: 10px;
+    overflow: auto;
+}
+
+.apply-job-info-text {
+    width: 100%;
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    outline: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.apply-job-info-text h2 {
+    line-height: 1;
+    font-weight: 500;
+    padding: 10px 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.apply-job-company-info {
+    width: 30%;
+    padding: 10px;
+    overflow: auto;
+}
+
+.apply-job-company-info-text {
+    width: 100%;
+    margin: 15px 0;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    outline: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.apply-job-company-info-text h2 {
+    line-height: 1;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.apply-job-company-info-text-summary {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20px 0 0 0;
+    overflow: auto;
+}
+
+.apply-job-company-info-text-summary img {
+    margin-right: 10px;
+}

@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<section class="home">
+    <div class="content">
+        <div class="home-text">
+            <h4>Easiest way to find a perfect job</h4>
+            <h1>Find Your Next Dream Job</h1>
+            <button class="job">
+                <a href="{% url 'jobList' %}" style="color: white">
+                    Looking For Job?
+                </a>
+            </button>
+            <button class="talent">
+                <a href="{% url 'postJob' %}" style="color: white">
+                    Looking For Talent?
+                </a>
+            </button>
+        </div>
+        <img src="{% static '/app/images/job.png' %}" alt="Image">
+    </div>
+</section>
+
+<br>
+
+<section class="home-a">
+    <h1>
+        1250+
+    </h1>
+    <h2>
+        Browse From Our Top Jobs
+    </h2>
+    <p>
+        Discover your dream job with ease on Jobfinity, where we curate a vast selection of employment opportunities
+        to
+        connect ambitious professionals with their ideal career paths.
+    </p>
+    <p>
+        Check out our top jobs and apply today >>>
+    </p>
+</section>
+
+<section class="home-b">
+    <div class="card-slider">
+        <img src="{% static '/app/images/arrow-left.png' %}" alt="image" class="arrow" id="left">
+        <ul class="carousel">
+            <li class="card">
+                <div class="card-img">
+                    <img src="{% static '/app/images/software-developer.png' %}" alt="image" draggable="false">
+                </div>
+                <h2>Software Developer</h2>
+                <h3>TechNex Solutions</h3>
+                <button>
+                    <a href="{% url 'jobList' %}">
+                        See Jobs
+                    </a>
+                </button>
+            </li>
+            <li class="card">
+                <div class="card-img">
+                    <img src="{% static '/app/images/data-scientist.png' %}" alt="image" draggable="false">
+                </div>
+                <h2>Data Scientist</h2>
+                <h3>BrightStar Technologies</h3>
+                 <button>
+                    <a href="{% url 'jobList' %}">
+                        See Jobs
+                    </a>
+                </button>
+            </li>
+            <li class="card">
+                <div class="card-img">
+                    <img src="{% static '/app/images/accountant.png' %}" alt="image" draggable="false">
+                </div>
+                <h2>Accountant</h2>
+                <h3>SwiftBuy</h3>
+                 <button>
+                    <a href="{% url 'jobList' %}">
+                        See Jobs
+                    </a>
+                </button>
+            </li>
+            <li class="card">
+                <div class="card-img">
+                    <img src="{% static '/app/images/professor.png' %}" alt="image" draggable="false">
+                </div>
+                <h2>Professor</h2>
+                <h3>KnowledgeQuest Institute</h3>
+                 <button>
+                    <a href="{% url 'jobList' %}">
+                        See Jobs
+                    </a>
+                </button>
+            </li>
+            <li class="card">
+                <div class="card-img">
+                    <img src="{% static '/app/images/web-developer.png' %}" alt="image" draggable="false">
+                </div>
+                <h2>Web Developer</h2>
+                <h3>Zenith Group</h3>
+                 <button>
+                    <a href="{% url 'jobList' %}">
+                        See Jobs
+                    </a>
+                </button>
+            </li>
+            <li class="card">
+                <div class="card-img">
+                    <img src="{% static '/app/images/sale-representative.png' %}" alt="image" draggable="false">
+                </div>
+                <h2>Sale Representative</h2>
+                <h3>GadgetGrove</h3>
+                 <button>
+                    <a href="{% url 'jobList' %}">
+                        See Jobs
+                    </a>
+                </button>
+            </li>
+            <li class="card">
+                <div class="card-img">
+                    <img src="{% static '/app/images/nurse.png' %}" alt="image" draggable="false">
+                </div>
+                <h2>Nurse</h2>
+                <h3>Evergreen Medical Center</h3>
+                 <button>
+                    <a href="{% url 'jobList' %}">
+                        See Jobs
+                    </a>
+                </button>
+            </li>
+        </ul>
+        <img src="{% static '/app/images/arrow-right.png' %}" alt="image" class="arrow" id="right">
+    </div>
+</section>
+
+<section class="home">
+    <div class="content">
+        <img src="{% static '/app/images/job2.png' %}" alt="Image">
+        <div class="home-text">
+            <h1>We Build Long Lasting Relationships Between Candidates & Companies</h1>
+        </div>
+    </div>
+</section>
+
+<section class="home-a">
+    <h2>
+        Browse Job From Top Categories
+    </h2>
+    <p>
+        Discover a curated selection of premier job listings across top industries including Technology & IT,
+        Finance &
+        Accounting, Marketing & Sales, and more. Uncover exceptional career prospects and elevate your professional
+        path
+        with us.
+    </p>
+</section>
+
+<section class="job-box">
+    <div class="job-box-container">
+        <div class="box">
+            <img src="{% static '/app/images/technology.png' %}" alt="image">
+            <h2>Technology</h2>
+            <p>
+                Tech enthusiast eager to solve complex problems through coding and creativity
+            </p>
+            <button>
+                <a href="{% url 'jobList' %}">
+                    Browse Jobs
+                </a>
+            </button>
+        </div>
+
+        <div class="box">
+            <img src="{% static '/app/images/finance.png' %}" alt="image">
+            <h2>Finance</h2>
+            <p>
+                Numbers-driven finance professional with a strategic mindset.
+            </p>
+            <button>
+                <a href="{% url 'jobList' %}">
+                    Browse Jobs
+                </a>
+            </button>
+        </div>
+
+        <div class="box">
+            <img src="{% static '/app/images/marketing.png' %}" alt="image">
+            <h2>Marketing</h2>
+            <p>
+                Creative marketer skilled in driving impactful campaigns.
+            </p>
+            <button>
+                <a href="{% url 'jobList' %}">
+                    Browse Jobs
+                </a>
+            </button>
+        </div>
+
+        <div class="box">
+            <img src="{% static '/app/images/corporate.png' %}" alt="image">
+            <h2>Corporate</h2>
+            <p>Experienced corporate leader driving growth and collaboration.</p>
+            <button>
+                <a href="{% url 'jobList' %}">
+                    Browse Jobs
+                </a>
+            </button>
+        </div>
+
+        <div class="box">
+            <img src="{% static '/app/images/medical.png' %}" alt="image">
+            <h2>Health/Medical</h2>
+            <p>
+                Compassionate medical professional, dedicated to patient care.
+            </p>
+            <button>
+                <a href="{% url 'jobList' %}">
+                    Browse Jobs
+                </a>
+            </button>
+        </div>
+
+        <div class="box">
+            <img src="{% static '/app/images/copy-writing.png' %}" alt="image">
+            <h2>Copy Writing</h2>
+            <p>
+                Wordsmith crafting captivating content.
+            </p>
+            <button>
+                <a href="{% url 'jobList' %}">
+                    Browse Jobs
+                </a>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="home">
+    <div class="content">
+        <div class="home-text">
+            <h1>More Than 2843+ Happy Candidates</h1>
+            <h4>
+                Check out what our candidates have to say about us >>>
+            </h4>
+        </div>
+        <img src="{% static '/app/images/job3.png' %}" alt="Image">
+    </div>
+</section>
+
+<section class="home-c">
+    <div class="review-slider">
+        <ul class="review-carousel">
+            <li class="review-card">
+                <div class="review-card-img">
+                    <img src="{% static '/app/images/male-avatar.png' %}" alt="image">
+                </div>
+                <div class="review-card-text">
+                    <h1>Niraj Parmar</h1>
+                    <h2>Software Engineer</h2>
+                    <blockquote>"Thanks to Jobfinity, I landed a fantastic job as a Software Engineer in a leading tech
+                        company.
+                        The platform's user-friendly interface and personalized job recommendations made my job
+                        search a
+                        breeze. Highly recommended!"
+                    </blockquote>
+                </div>
+            </li>
+            <li class="review-card">
+                <div class="review-card-img">
+                    <img src="{% static '/app/images/male-avatar.png' %}" alt="image">
+                </div>
+                <div class="review-card-text">
+                    <h1>Dhiraj Parmar</h1>
+                    <h2>Civil Engineer</h2>
+                    <blockquote>"I had a great experience using Jobfinity to find my dream role as a Civil Engineer. The
+                        site's
+                        extensive database and timely alerts for new job postings kept me ahead of the competition.
+                        Thank you, Jobfinity!"
+                    </blockquote>
+                </div>
+            </li>
+            <li class="review-card">
+                <div class="review-card-img">
+                    <img src="{% static '/app/images/male-avatar.png' %}" alt="image">
+                </div>
+                <div class="review-card-text">
+                    <h1>Vyom Vasava</h1>
+                    <h2>Data Scientist</h2>
+                    <blockquote>"Jobfinity made my job search stress-free and efficient. As a Financial Analyst, I was
+                        able
+                        to
+                        explore numerous relevant opportunities, and the application process was seamless. Grateful
+                        for
+                        the excellent support!"
+                    </blockquote>
+                </div>
+            </li>
+            <li class="review-card">
+                <div class="review-card-img">
+                    <img src="{% static '/app/images/male-avatar.png' %}" alt="image">
+                </div>
+                <div class="review-card-text">
+                    <h1>Pratham Rana</h1>
+                    <h2>Accountant</h2>
+                    <blockquote>"Jobfinity is a game-changer! It helped me secure a rewarding position as a Sales
+                        Representative
+                        in a dynamic company. The platform's valuable resources and interview tips gave me the
+                        confidence to excel in my interviews. Highly satisfied!"
+                    </blockquote>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<br>
+<br>
+
+{% endblock %}

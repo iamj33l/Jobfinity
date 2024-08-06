@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="sign-out-body">
+        <div class="sign-out-container">
+            <form action="{% url 'signOutAttempt' %}" method="POST" class="sign-out-form">
+                {% csrf_token %}
+                Are you sure you want to sign out ?
+                <br>
+                <input type="submit" value="Sign Out" class="sign-out-form-button">
+            </form>
+            <button class="sign-out-cancel-button">
+                {% if request.session.role == 'candidate' %}
+                    <a href="{% url 'candidateProfile' %}">
+                        Cancel
+                    </a>
+                {% else %}
+                    <a href="{% url 'companyProfile' %}">
+                        Cancel
+                    </a>
+                {% endif %}
+            </button>
+        </div>
+    </div>
+
+{% endblock %}

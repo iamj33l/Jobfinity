@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<section class="home">
+    <div class="content">
+        <img src="{% static '/app/images/email-sent.png' %}" alt="Image">
+        <div class="home-text">
+            <h1 style="font-size: 45px">Check Your Emails</h1>
+            <h4 style="font-weight: 300; font-size: 18px">
+                We've just sent a verification link to the email address linked with your account. To verify your account, please click on the provided link. This will help confirm your account's authenticity and grant you access to all the features and benefits available to our users.
+            </h4>
+            <br>
+            <button class="job">
+                <a href="https://mail.google.com/mail/u/0/#inbox" style="color: white" target="_blank">
+                    Open Gmail
+                </a>
+            </button>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

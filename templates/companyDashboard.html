@@ -1,0 +1,93 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <br>
+    <br>
+    <div class="company-dashboard-main">
+        <section class="company-dashboard-home">
+            <div class="company-dashboard-content">
+                <img src="{% static '/app/images/companyDashboard.png' %}" alt="Image">
+                <div class="company-dashboard-home-text">
+                    <h1>Dashboard</h1>
+                    <p>
+                        Welcome to the Jobfinity Company Dashboard, where you can effortlessly manage your job listings
+                        and streamline your hiring process. Gain valuable insights into your company's performance. Stay
+                        ahead in the competitive job market with Jobfinity, as we empower you to find the perfect talent
+                        and grow your team efficiently.
+                        <br>
+                        <br>
+                        Didn't post a job yet? post a job now >>>
+                    </p>
+                    <button class="company-dashboard-button">
+                        <a href="#">
+                            Post a Job
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="company-dashboard-table-container">
+            <div class="company-dashboard-table">
+            <div class="table-header">
+                <h1>
+                    Your Jobs
+                </h1>
+            </div>
+            <div class="table-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Location</th>
+                            <th>Salary</th>
+                            <th>No. of Applicants</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% if jobs %}
+                        {% for job in jobs %}
+                            <tr>
+                                <td> {{ job.title }} </td>
+                                <td> {{ job.location }} </td>
+                                <td> {{ job.salary }} LPA</td>
+                                <td>
+                                    {{ job.number_of_applicants }}, <a href="{% url 'applicantsTable' primary_key=job.id %}"> view all </a>
+                                </td>
+                                {% if job.status == 'active' %}
+                                    <td>
+                                        <p class="status active">
+                                            active
+                                        </p>
+                                    </td>
+                                {% else %}
+                                    <td>
+                                        <p class="status inactive">
+                                            inactive
+                                        </p>
+                                    </td>
+                                {% endif %}
+                                <td>
+                                    <form action="{% url 'updateJob' primary_key=job.id %}">
+                                        <button class="company-dashboard-update-button">
+                                            Update
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </section>
+    </div>
+    <br>
+    <br>
+    <br>
+
+{% endblock %}

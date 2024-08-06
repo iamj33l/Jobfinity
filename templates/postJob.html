@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="post-job-body">
+<div class="post-job-main">
+        <section class="post-job-sub-main">
+            <div class="post-job">
+                <div class="post-job-banner">
+                    <div class="post-job-card">
+                        <form action="{% url 'postJobAttempt' %}" method="POST" class="post-job-form post-job-form-main" id="post-job-form">
+                            {% csrf_token %}
+                            <h1 class="post-job-form-heading">
+                                Post a Job
+                            </h1>
+                            <div class="post-job-form-input-field">
+                                <input type="text" name="title" placeholder="Job Title" required>
+                            </div>
+                            <div class="post-job-form-input-field">
+                                <textarea name="description" id="" cols="60" rows="10" placeholder="Description"></textarea>
+                            </div>
+                            <div class="post-job-form-input-field">
+                                <textarea name="responsibilities" id="" cols="60" rows="10" placeholder="Responsibilities"></textarea>
+                            </div>
+                            <div class="post-job-form-input-field">
+                                <textarea name="qualification" id="" cols="60" rows="10" placeholder="Qualifications"></textarea>
+                            </div>
+                            <div class="post-job-form-input-field">
+                                <input type="text" name="salary" placeholder="Salary(in LPA)" required>
+                            </div>
+                            <div class="post-job-form-input-field">
+                                <input type="text" name="location" placeholder="Location" required>
+                            </div>
+                            <div class="post-job-form-input-field">
+                                <input type="text" name="experience" placeholder="Work Experience" required>
+                            </div>
+                            <div class="post-job-form-input-field">
+                                <input type="text" name="vacancy" placeholder="Vacancy" required>
+                            </div>
+                            <select name="type" class="post-job-form-job-type">
+                                <option value="" disabled selected>Select Job Type</option>
+                                <option value="full-time">Full Time</option>
+                                <option value="part-time">Part Time</option>
+                                <option value="seasonal">Seasonal</option>
+                                <option value="contract">Contract</option>
+                                <option value="internship">Internship</option>
+                            </select>
+                            <div class="post-job-form-input-field">
+                                <label class="post-job-form-label" for="deadline"> Deadline for applying: </label>
+                                <input type="date" name="deadline" required>
+                            </div>
+                            <input type="submit" value="Post" class="post-job-form-button" id="post-job-submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock %}

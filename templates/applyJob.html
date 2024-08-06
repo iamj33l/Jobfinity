@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="apply-job-main">
+        <section class="apply-job-sub-main">
+            <div class="apply-job">
+                <div class="apply-job-banner">
+                    {% if job %}
+                        <div class="apply-job-card">
+                        <div class="apply-job-info">
+                            <div class="apply-job-title">
+                                <div class="apply-job-title-img">
+                                    <img src="{% static '/app/images/google-job.png' %}" alt="">
+                                </div>
+                                <div class="apply-job-title-text">
+                                    <h1>
+                                        {{ job.title }}
+                                    </h1>
+                                    {% if is_applied %}
+                                       <strong>Already applied for this job</strong>
+                                    {% else %}
+                                        <form action="{% url 'applyJobAttempt' primary_key=job.id %}" method="POST" class="apply-job-form" id="apply-job-form-id">
+                                            {% csrf_token %}
+                                            <input type="submit" value="Apply" class="apply-job-form-submit" id="apply-job-submit-id">
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="apply-job-info-text">
+                                <h2>
+                                    Description
+                                </h2>
+                                <p>
+                                    {{ job.description }}
+                                </p>
+                            </div>
+
+                            <div class="apply-job-info-text">
+                                <h2>
+                                    Responsibilities
+                                </h2>
+                                <p>
+                                    {{ job.responsibilities }}
+                                </p>
+                            </div>
+                            <div class="apply-job-info-text">
+                                <h2>
+                                    Qualifications
+                                </h2>
+                                <p>
+                                    {{ job.qualification }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="apply-job-company-info">
+                            <div class="apply-job-company-info-text">
+                                <h2>
+                                    Job Summary
+                                </h2>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/published.png' %}" alt="">
+                                    Published: {{ job.date_posted }}
+                                </div>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/location.png' %}" alt="">
+                                    Location: {{ job.location }}
+                                </div>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/salary.png' %}" alt="">
+                                    Salary: {{ job.salary }} LPA
+                                </div>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/time.png' %}" alt="">
+                                    Time: {{ job.type }}
+                                </div>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/experience.png' %}" alt="">
+                                    Experience: {{ job.experience }}
+                                </div>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/vacancy.png' %}" alt="">
+                                    Vacancy: {{ job.vacancy }}
+                                </div>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/deadline.png' %}" alt="">
+                                    Deadline: {{ job.deadline }}
+                                </div>
+                            </div>
+                            <div class="apply-job-company-info-text">
+                                <h2>
+                                    About Company
+                                </h2>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/company.png' %}" alt="">
+                                    Company: {{ job.company.company_name }}
+                                </div>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/mail.png' %}" alt="">
+                                    Mail: {{ job.company.user_id.email }}
+                                </div>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/phone.png' %}" alt="">
+                                    Contact: {{ job.company.contact }}
+                                </div>
+                                <div class="apply-job-company-info-text-summary">
+                                    <img src="{% static '/app/images/website.png' %}" alt="">
+                                    Website: {{ job.company.website }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

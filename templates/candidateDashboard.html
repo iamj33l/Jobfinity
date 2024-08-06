@@ -1,0 +1,76 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <br>
+    <br>
+    <div class="candidate-dashboard-main">
+        <section class="candidate-dashboard-home">
+            <div class="candidate-dashboard-content">
+                <img src="{% static '/app/images/candidateDashboard.png' %}" alt="Image">
+                <div class="candidate-dashboard-home-text">
+                    <h1>Dashboard</h1>
+                    <p>
+                        Your Candidate Dashboard on Jobfinity is your personal hub to track and manage your job applications. Easily review your applied jobs, check their status, and stay updated on your career journey at a glance. Your path to success begins here.
+                        <br>
+                        <br>
+                        Didn't apply for a job yet? apply now >>>
+                    </p>
+                    <button class="candidate-dashboard-button">
+                        <a href="{% url 'jobList' %}">
+                            Apply Now
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="candidate-dashboard-table-container">
+            <div class="candidate-dashboard-table">
+            <div class="table-header">
+                <h1>
+                    Your Job Applications
+                </h1>
+            </div>
+                {% if applications %}
+                    <div class="table-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Location</th>
+                            <th>Salary</th>
+                            <th>Type</th>
+                            <th>Company</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for application in applications %}
+                            <tr>
+                                <td> {{ application.job.title }} </td>
+                                <td> {{ application.job.location }} </td>
+                                <td> {{ application.job.salary }} LPA </td>
+                                <td> {{ application.job.type }} </td>
+                                <td> {{ application.job.company.company_name }} </td>
+                                <td> {{ application.status }} </td>
+                                <td>
+                                    <form action="{% url 'withdrawApplication' primary_key=application.job.id  %}" method="post" class="application-withdraw-form">
+                                        {% csrf_token %}
+                                        <input type="submit" value="Withdraw" class="application-withdraw-form-button">
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+                {% endif %}
+        </div>
+        </section>
+    </div>
+    <br>
+    <br>
+    <br>
+
+{% endblock %}

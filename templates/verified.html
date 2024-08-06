@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<section class="home">
+    <div class="content">
+        <div class="home-text">
+            <h1 style="font-size: 45px">Welcome!</h1>
+            <h4 style="font-weight: 300; font-size: 18px">
+                Welcome to Jobfinity! Your journey to your dream job begins here. Explore, connect, and
+                thrive in your career path with us. Good luck!
+                <br>
+                Remember, the perfect opportunity could be just a click away. Happy job hunting!
+                <br>
+                Embark on your career journey! Unlock job opportunities by elegantly signing in with your
+                email and password. Let's get your job search underway.
+            </h4>
+            <br>
+            <button class="job">
+                <a href="{% url 'signIn' %}" style="color: white">
+                    Sign in
+                </a>
+            </button>
+        </div>
+        <img src="{% static '/app/images/verify.png' %}" alt="Image">
+    </div>
+</section>
+
+{% endblock %}

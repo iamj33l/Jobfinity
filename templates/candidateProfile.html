@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="candidate-profile-body">
+        <div class="candidate-profile-main">
+            <div class="candidate-profile-container">
+                {% if candidate %}
+                    <div class="candidate-profile-card">
+                    <div class="candidate-profile-card-header">
+                        <div class="candidate-profile-image">
+                            {% if candidate.profile_pic %}
+                                <img src="{{ MEDIA_URL }}{{ candidate.profile_pic.url }}" alt="profile-image">
+                            {% else %}
+                                {% if candidate.gender == 'male' %}
+                                    <img src="{% static '/app/images/male-avatar.png' %}" alt="profile-image">
+                                {% else %}
+                                    <img src="{% static '/app/images/female-avatar.png' %}" alt="profile-image">
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <div class="candidate-profile-details">
+                            <div class="candidate-profile-details-title">
+                                <h1> {{ candidate.firstname }} {{ candidate.lastname }}</h1>
+                                <h2> {{ candidate.user_id.email }} </h2>
+                            </div>
+                            <div class="candidate-profile-details-actions">
+                                <form action="{% url 'editCandidateProfile' primary_key=candidate.id %}" method="POST" id="edit-candidate-profile-form">
+                                    {% csrf_token %}
+                                    <input type="submit" value="Edit" class="candidate-profile-details-edit-buttons" id="edit-candidate-profile-form-submit">
+                                </form>
+                                <button class="candidate-profile-details-log-out-buttons">
+                                    <a href="{% url 'signOut' %}">
+                                        Sign out
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="candidate-profile-card-body">
+                        <p>
+                            <strong>About:</strong> {{ candidate.about }}
+                        </p>
+                        <p>
+                            <strong>Date of Birth:</strong> {{ candidate.dob }}
+                        </p>
+                        <p>
+                            <strong>Gender:</strong> {{ candidate.gender }}
+                        </p>
+                        <p>
+                            <strong>Contact:</strong> {{ candidate.contact }}
+                        </p>
+                        <p>
+                            <strong>Address:</strong> {{ candidate.address}}
+                        </p>
+                        <p>
+                            <strong>City:</strong> {{ candidate.city }}
+                        </p>
+                        <p>
+                            <strong>State:</strong> {{ candidate.state }}
+                        </p>
+                        <p>
+                            <strong>Resume:</strong>
+                            {% if candidate.resume %}
+                                <a href="{{ MEDIA_URL }}{{ candidate.resume.url }}" target="_blank">View Resume</a>
+                            {% else %}
+                                <a href="#">No Resume Uploaded</a>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

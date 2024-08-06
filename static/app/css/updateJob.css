@@ -1,0 +1,161 @@
+.update-job-body {
+    margin: 130px 0 50px 0;
+    width: 100%;
+}
+
+.update-job-sub-main {
+    margin: 0 80px 10px 80px;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+}
+
+.update-job {
+    margin: 15px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.update-job .update-job-banner {
+    display: grid;
+    gap: 18px;
+}
+
+.update-job-banner .update-job-card {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    background: #3c4c56;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+}
+
+.update-job-card .job-card-img img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    float: left;
+    padding: 10px;
+    margin: 5px 30px 5px 10px;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.update-job-card {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.update-job-card .update-job-card-text {
+    padding: 0 15px;
+    width: 100%;
+}
+
+.update-job-card .update-job-card-text h1 {
+    font-size: 25px;
+    color: var(--main-color);
+    font-weight: 500;
+}
+
+.update-job-card .update-job-card-text h2 {
+    font-size: 20px;
+    color: var(--main-color);
+    font-weight: 300;
+    margin: 5px 0;
+}
+
+form.update-job-form-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-width: 238px;
+    padding: 25px;
+}
+
+form.post-blog-form {
+    opacity: 1;
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+form.update-job-form {
+    opacity: 1;
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+.update-job-form-heading {
+    font-size: 36px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.update-job-form-input-field {
+    margin: 12px;
+    width: 100%;
+}
+
+.update-job-form-input-field input,  .update-job-form-input-field textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    outline: none;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.update-job-form-job-type {
+    width: 100%;
+    margin: 12px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    outline: none;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.update-job-form-job-type option {
+    background-color: #3c4c56;
+    color: white;
+}
+
+.update-job-form-label {
+    margin: 0 0 10px 0;
+}
+
+.update-job-form-button {
+    width: 140px;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    background: var(--main-color);
+    color: var(--text-color);
+    font-size: 18px;
+    margin: 25px 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+
+.update-job-form-button:hover {
+    cursor: pointer;
+}

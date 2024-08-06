@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="company-profile-body">
+        <div class="company-profile-main">
+            <div class="company-profile-container">
+                {% if company %}
+                    <div class="company-profile-card">
+                    <div class="company-profile-card-header">
+                        <div class="company-profile-image">
+                            {% if company.profile_pic %}
+                                <img src="{{ MEDIA_URL }}{{ company.profile_pic.url }}" alt="profile-image">
+                            {% else %}
+                                <img src="{% static '/app/images/male-avatar.png' %}" alt="profile-image">
+                            {% endif %}
+                        </div>
+                        <div class="company-profile-details">
+                            <div class="company-profile-details-title">
+                                <h1> {{ company.company_name }} </h1>
+                                <h2> {{ company.user_id.email }} </h2>
+                            </div>
+                            <div class="company-profile-details-actions">
+                                <form action="{% url 'editCompanyProfile' primary_key=company.id %}" method="POST" id="edit-profile-form">
+                                    {% csrf_token %}
+                                <input type="submit" value="Edit" class="company-profile-details-edit-buttons" id="edit-profile-form-submit">
+                                </form>
+                                <button class="candidate-profile-details-log-out-buttons">
+                                    <a href="{% url 'signOut' %}">
+                                        Sign out
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="company-profile-card-body">
+                        <p>
+                            <strong>About:</strong> {{ company.about }}
+                        </p>
+                        <p>
+                            <strong>Contact:</strong> {{ company.contact }}
+                        </p>
+                        <p>
+                            <strong>Address:</strong> {{ company.address }}
+                        </p>
+                        <p>
+                            <strong>City:</strong> {{ company.city }}
+                        </p>
+                        <p>
+                            <strong>State:</strong> {{ company.state }}
+                        </p>
+                        <p>
+                            <strong>website:</strong>
+                            <a href="#"> {{ company.website }} </a>
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

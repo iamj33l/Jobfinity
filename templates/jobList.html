@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <br>
+    <div class="job-list-main">
+        <section class="job-list-home">
+            <div class="job-list-content">
+                <div class="job-list-home-text">
+                    <h1>Browse Jobs</h1>
+                    <p>
+                        Your next career move awaits! Explore a wide range of job opportunities across industries and
+                        experience levels on our job browsing page. Your dream job could be just a click away. Start
+                        your journey to a brighter future now!
+                        <br>
+                        <br>
+                        Find your dream job here >>>
+                    </p>
+                </div>
+                <img src="{% static '/app/images/jobList.png' %}" alt="Image">
+            </div>
+        </section>
+        <section class="job-list-sub-main">
+            <div class="job-list">
+                <ul class="job-banner">
+                    {% if jobs %}
+                    {% for job in jobs %}
+                    <li class="job-card">
+                        <div class="job-card-img">
+                            {% if job.company.profile_pic %}
+                                <img src="{{ MEDIA_URL }}{{ job.company.profile_pic.url }}" alt="Image">
+                            {% else %}
+                                <img src="{% static '/app/images/job-logo-substitute.png' %}" alt="Image">
+                            {% endif %}
+                        </div>
+                        <div class="job-card-text">
+                            <h1>{{ job.title }}</h1>
+                            <h2>{{ job.company.company_name }}</h2>
+                            <div class="job-list-time">
+                                <img src="{% static '/app/images/time.png' %}" alt="">
+                                {{ job.type }}
+                            </div>
+                            <div class="job-list-location">
+                                <img src="{% static '/app/images/location.png' %}" alt="">
+                                {{ job.location }}
+                            </div>
+                        </div>
+                        <div class="job-salary">
+                            <h3>
+                                Salary
+                            </h3>
+                            <h2>
+                                {{ job.salary }} LPA
+                            </h2>
+                            <button>
+                                <a href="{% url 'applyJob' primary_key=job.id %}">
+                                    Apply Now
+                                </a>
+                            </button>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+         <section class="pagination-body">
+            <div class="pagination-container">
+                <ul class="pagination">
+                    {% if jobs.has_previous %}
+                        <li class="pagination-content">
+                            <a href="/jobList/?page={{ jobs.previous_page_number }}">
+                                < Previous
+                            </a>
+                        </li>
+                        <li class="pagination-content">
+                            <a href="/jobList/?page=1">
+                                First
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if jobs.has_next %}
+                    <li class="pagination-content">
+                        <a href="/jobList/?page={{ total_page }}">
+                            Last
+                        </a>
+                    </li>
+                    <li class="pagination-content">
+                        <a href="/jobList/?page={{ jobs.next_page_number }}">
+                            Next >
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+    </div>
+    <br>
+    <br>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="edit-candidate-profile-body">
+<div class="edit-candidate-profile-main">
+        <section class="edit-candidate-profile-sub-main">
+            <div class="edit-candidate-profile">
+                <div class="edit-candidate-profile-banner">
+                    <div class="edit-candidate-profile-card">
+                        {% if candidate %}
+                            <form action="{% url 'editCandidateProfileAttempt' primary_key=candidate.id %}" method="POST" class="edit-candidate-profile-form edit-candidate-profile-form-main" id="edit-candidate-profile-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <h1 class="edit-candidate-profile-form-heading">
+                                Edit Profile
+                            </h1>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <label class="edit-candidate-profile-form-label" for="profile"> Profile Picture:(only .png, .jpeg, .jpg are allowed)  </label>
+                                <input type="file" name="profile" accept=".png, .jpg, .jpeg">
+                            </div>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <input type="text" name="firstname" value="{{ candidate.firstname }}" placeholder="First Name">
+                            </div>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <input type="text" name="lastname" value="{{ candidate.lastname}}" placeholder="Last Name">
+                            </div>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <textarea name="about" id="" cols="60" rows="10" placeholder="About(max 150 characters)">{{ candidate.about }}</textarea>
+                            </div>
+                            <select name="gender" class="edit-candidate-profile-form-gender">
+                                <option value="" disabled selected>Select your gender</option>
+                                <option value="male" {% if candidate.gender == 'male' %} selected {% endif %}>Male</option>
+                                <option value="female" {% if candidate.gender == 'female' %} selected {% endif %}>Female</option>
+                                <option value="other" {% if candidate.gender == 'other' %} selected {% endif %}>Other</option>
+                            </select>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <label class="edit-candidate-profile-form-label" for="dob"> Date of Birth: </label>
+                                <input type="date" name="dob" value="{{ candidate.dob }}">
+                            </div>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <input type="text" name="contact" value="{{ candidate.contact }}" placeholder="contact(+91 00000 00000)">
+                            </div>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <textarea name="address" id="" cols="60" rows="5" placeholder="Address">{{ candidate.address }}</textarea>
+                            </div>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <input type="text" name="city" value="{{ candidate.city }}" placeholder="City">
+                            </div>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <input type="text" name="state" value="{{ candidate.state }}" placeholder="State">
+                            </div>
+                            <div class="edit-candidate-profile-form-input-field">
+                                <label class="edit-candidate-profile-form-label" for="resume"> Resume:(only .pdf are allowed)  </label>
+                                <input type="file" name="resume" accept=".pdf">
+                            </div>
+                            <input type="submit" value="Update" class="edit-candidate-profile-form-button" id="edit-candidate-profile-form-button">
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock %}

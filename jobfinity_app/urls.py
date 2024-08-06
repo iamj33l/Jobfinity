@@ -1,0 +1,32 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('contact/', views.contact, name='contact'),
+    path('signIn/', views.signIn, name='signIn'),
+    path('jobList/', views.jobList, name='jobList'),
+    path('tokenSent/', views.tokenSent, name='tokenSent'),
+    path('verified/', views.verified, name='verified'),
+    path('signUp/', views.register_attempt, name='signUp'),
+    path('verify/<token>', views.verify, name="verify"),
+    path('login/', views.login_attempt, name='login'),
+    path('companyProfile/', views.companyProfile, name='companyProfile'),
+    path('editCompanyProfile/<int:primary_key>', views.edit_company_profile, name='editCompanyProfile'),
+    path('editCompanyProfileAttempt/<int:primary_key>', views.edit_company_profile_attempt, name='editCompanyProfileAttempt'),
+    path('candidateProfile/', views.candidateProfile, name='candidateProfile'),
+    path('editCandidateProfile/<int:primary_key>', views.edit_candidate_profile, name='editCandidateProfile'),
+    path('editCandidateProfileAttempt/<int:primary_key>', views.edit_candidate_profile_attempt, name='editCandidateProfileAttempt'),
+    path('companyDashboard/', views.companyDashboard, name='companyDashboard'),
+    path('postJob/', views.postJob, name='postJob'),
+    path('updateJob/<int:primary_key>', views.update_job, name='updateJob'),
+    path('postJobAttempt/', views.post_job_attempt, name='postJobAttempt'),
+    path('updateJobAttempt/<int:primary_key>', views.update_job_attempt, name='updateJobAttempt'),
+    path('applyJob/<int:primary_key>', views.applyJob, name='applyJob'),
+    path('applyJobAttempt/<int:primary_key>', views.apply_job_attempt, name='applyJobAttempt'),
+    path('candidateDashboard/', views.candidateDashboard, name='candidateDashboard'),
+    path('applicantsTable/<int:primary_key>', views.applicantsTable, name='applicantsTable'),
+    path('withdrawApplication/<int:primary_key>', views.withdraw_application, name='withdrawApplication'),
+    path('signOut/', views.signOut, name='signOut'),
+    path('signOutAttempt/', views.sign_out_attempt, name='signOutAttempt'),
+]

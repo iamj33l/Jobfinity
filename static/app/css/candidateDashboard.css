@@ -1,0 +1,193 @@
+.candidate-dashboard-home {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.candidate-dashboard-home-text {
+    width: 550px;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+.candidate-dashboard-content {
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.candidate-dashboard-content img {
+    height: auto;
+    margin: 45px 20px 0 0;
+    width: 550px;
+    max-width: 100%;
+}
+
+.candidate-dashboard-home-text h1 {
+    font-size: 65px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+.candidate-dashboard-home-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1280px) {
+    .candidate-dashboard-home {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        padding: 70px 0;
+    }
+
+    .candidate-dashboard-home .candidate-dashboard-content img {
+        width: 450px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .candidate-dashboard-home .candidate-dashboard-content img {
+        width: 250px;
+        margin-top: 30px;
+    }
+
+    .candidate-dashboard-home-text h1 {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+}
+
+.candidate-dashboard-button {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 10px 25px 0 0;
+    color: #fff;
+    background-color: #83498C;
+    text-decoration: none;
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.candidate-dashboard-button a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.candidate-dashboard-table-container {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1.2rem;
+    text-align: left;
+}
+
+div.candidate-dashboard-table {
+    width: 82vw;
+    height: 90vh;
+    background-color: #3c4c56;
+    backdrop-filter: blur(7px);
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.table-header {
+    width: 100%;
+    height: 10%;
+    background-color: #BA68C8;
+    padding: 0.8rem 1rem;
+}
+
+.table-body {
+    color: #222327;
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    margin: 1rem auto;
+    border-radius: 0.6rem;
+    background-color: #fffb;
+    backdrop-filter: blur(7px);
+    overflow: auto;
+}
+
+.table-body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table-body::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table-body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #ea8efb;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr:hover {
+    background-color: #EA8EFB80;
+}
+
+.status {
+    padding: 0.4rem 0;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.status.active {
+    background-color: #98fb98;
+    color: #008000;
+}
+
+.status.inactive {
+    background-color: #ffcccb;
+    color: #8b0000;
+}
+
+.application-withdraw-form .application-withdraw-form-button {
+    padding: 0.4rem 1rem;
+    border: 0;
+    border-radius: 2rem;
+    text-align: center;
+    background-color: #ea8efb;
+    color: #83498C;
+}
+
+@media (max-width: 1000px) {
+    td {
+        min-width: 12.1rem;
+    }
+}

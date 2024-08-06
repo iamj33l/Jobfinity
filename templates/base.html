@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobfinity</title>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="{% static '/app/css/home.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/contact.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/signIn.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/jobList.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/companyDashboard.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/postJob.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/updateJob.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/applyJob.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/candidateDashboard.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/applicantsTable.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/companyProfile.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/candidateProfile.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/editCompanyProfile.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/editCandidateProfile.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/app/css/signOut.css' %}" type="text/css">
+
+    <!-- icon and fonts -->
+    <link rel="icon" href="{% static '/app/images/icon.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+<header class="home-header" id="home-header">
+    <a href="{% url 'home' %}" class="logo">
+        <img src="{% static '/app/images/logo.png' %}" alt="logo">
+        <span class="heading">
+                Jobfinity
+        </span>
+    </a>
+
+    <ul class="navbar">
+        <li>
+            <a href="{% url 'home' %}">HOME</a>
+        </li>
+        <li>
+            {%  if request.session.role == 'candidate' %}
+                <a href="{% url 'jobList' %}">BROWSE JOBS</a>
+            {% elif request.session.role == 'company' %}
+                <a href="{% url 'postJob' %}">POST JOB</a>
+            {% endif %}
+        </li>
+        <li>
+            {% if request.session.role == 'candidate' %}
+                <a href="{% url 'candidateDashboard' %}">
+                    DASHBOARD
+                </a>
+            {% elif request.session.role == 'company' %}
+                <a href="{% url 'companyDashboard' %}">
+                    DASHBOARD
+                </a>
+            {% endif %}
+        <li>
+            <a href="{% url 'contact' %}">CONTACT US</a>
+        </li>
+    </ul>
+
+    <div class="main" id="profile">
+        {% if request.session.is_signed_in %}
+            {% if request.session.role == 'candidate' %}
+                <a href="{% url 'candidateProfile' %}" class="user" id="user-profile-page">
+                <span id="user-profile-name">
+                    <img src="{% static '/app/images/user.png' %}" alt="user"> {{ request.session.name }}
+                </span>
+            {% elif request.session.role == 'company' %}
+                <a href="{% url 'companyProfile' %}" class="user" id="user-profile-page">
+                <span id="user-profile-name">
+                    <img src="{% static '/app/images/user.png' %}" alt="user"> {{ request.session.name }}
+                </span>
+            {% endif %}
+        </a>
+        {% else %}
+        <a href="{% url 'signIn' %}" class="user" id="sign-in-page">
+                <span id="user-profile-name">
+                    <img src="{% static '/app/images/user.png' %}" alt="user"> Sign In
+                </span>
+        </a>
+        {% endif %}
+        <div class="bx bx-menu" id="menu-icon">
+            <img src="{% static '/app/images/menu.png' %}" alt="menu">
+        </div>
+    </div>
+</header>
+
+{% block content %}
+
+    <!-- template content -->
+
+{% endblock %}
+
+<footer>
+    <div class="footer-main">
+        <div class="footer-left">
+            <a href="home.html" class="footer-logo">
+                <img src="{% static 'app/images/logo.png' %}" alt="logo">
+                <span class="footer-heading">
+                        Jobfinity
+                    </span>
+            </a>
+            <div class="footer-left-content">
+                <p>Jobfinity is a leading online job portal that connects millions of job-seekers to their dream
+                    jobs
+                    every day. We are dedicated to helping professionals find the best career opportunities in the
+                    market.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/" target="_blank"><img src="{% static '/app/images/facebook.png' %}"
+                                                                         alt="image"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="{% static '/app/images/instagram.png' %}"
+                                                                          alt="image"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="{% static 'app/images/linkedin.png' %}"
+                                                                         alt="image"></a>
+                <a href="https://twitter.com/" target="_blank"><img src="{% static '/app/images/twitter.png' %}"
+                                                                    alt="image"></a>
+            </div>
+        </div>
+        <div class="footer-center">
+            <h1>Address</h1>
+            <div class="location">
+                <img src="{% static '/app/images/location.png' %}" alt="">
+                Vadodara, Gujarat
+            </div>
+            <div class="phone">
+                <img src="{% static '/app/images/phone.png' %}" alt="">
+                +91 7069414211
+            </div>
+            <div class="mail">
+                <img src="{% static '/app/images/mail.png' %}" alt="">
+                pjeel122@gmail.com
+            </div>
+        </div>
+        <div class="footer-right">
+            <h1>Subscribe Newsletter</h1>
+            <div class="footer-right-content">
+                <p>Subscribe to our newsletter to get the latest updates and offers about jobs.</p>
+                <form class="footer-form" action="">
+                    <div>
+                        <input type="email" placeholder="Enter your email address">
+                    </div>
+                    <div>
+                        <input type="submit" value="Subscribe">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright">
+    <p>© 2023 Jobfinity All rights reserved</p>
+    |
+    <p> created with </p>
+    <img src="{% static '/app/images/love.png' %}" alt="image">
+    <p> by Jeel Patel.</p>
+</div>
+
+<!-- JavaScript files -->
+<script type="text/javascript" src={% static '/app/javascript/home.js' %}></script>
+<script type="text/javascript" src="{% static '/app/javascript/reviewSlider.js' %}"></script>
+<script type="text/javascript" src="{% static '/app/javascript/activePage.js' %}"></script>
+<script type="text/javascript" src="{% static '/app/javascript/signIn.js' %}"></script>
+<script type="text/javascript" src="{% static '/app/javascript/alertMessage.js' %}"></script>
+<script type="text/javascript" src="{% static '/app/javascript/jobAlertMessage.js' %}"></script>
+<script type="text/javascript" src="{% static '/app/javascript/editJobAlert.js' %}"></script>
+<script type="text/javascript" src="{% static '/app/javascript/applyJobAlert.js' %}"></script>
+<script type="text/javascript" src="{% static '/app/javascript/editCandidateProfileAlert.js' %}"></script>
+<script type="text/javascript" src="{% static '/app/javascript/editCompanyProfileAlert.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    letter-spacing: 1px;
+}
+
+:root {
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #DA68C8;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.contact {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.contact-text {
+    width: 550px;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+.contact-content {
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contact-content img {
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 0;
+    width: 550px;
+    max-width: 100%;
+}
+
+.contact-text h1 {
+    font-size: 65px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+.contact-text p {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1280px) {
+    .contact {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        padding: 70px 0;
+    }
+
+    .contact .contact-content img {
+        width: 450px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .contact .contact-content img {
+        width: 250px;
+        margin-top: 30px;
+    }
+
+    .contact-text h1 {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+}
+
+.subscribe {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 10px 25px 0 0;
+    color: #fff;
+    background-color: #83498C;
+    text-decoration: none;
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.subscribe:hover {
+    background-color: #ffffff;
+    color: #DA68C8;
+    cursor: pointer;
+}
+
+.map h2 {
+    color: #DA68C8;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 10px 15px 10px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 360px;
+    border: none;
+    border-radius: 15px;
+    padding: 0 8px;
+}
+
+.contact-info {
+    padding: 28px 12% 30px;
+}
+
+.contact-info-text {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.contact-info-right, .contact-info-left, .map {
+    border-radius: 10px;
+    background: #3c4c56ee;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.contact-info-right h1, .contact-info-left h1 {
+    color: #DA68C8;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 10px 10px;
+}
+
+.contact-location, .contact-phone, .contact-mail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 0 25px;
+}
+
+.contact-location img, .contact-phone img, .contact-mail img {
+    margin-right: 10px;
+}
+
+.contact-social h2 {
+    color: #DA68C8;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 20px 10px;
+}
+
+.contact-social-icon img {
+    padding: 0 10px;
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+
+.contact-social-icon img:hover {
+    cursor: pointer;
+    transform: translatey(-20px);
+    -webkit-transform: translatey(-15px);
+    -moz-transform: translatey(-15px);
+}
+
+.contact-info-form div {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.contact-info-form div input, .contact-info-form div textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #DA68C8;
+    background: transparent;
+    outline: none;
+    color: #ffffff;
+}
+
+.contact-info-form div input[type="submit"] {
+    background: #DA68C8;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-info-form div input[type="submit"]:hover {
+    background: #ffffff;
+    color: #DA68C8;
+    transition: 0.5s ease-out;
+}

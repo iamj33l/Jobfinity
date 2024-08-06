@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="applicant-table-body">
+    <section class="applicant-table-container">
+        <div class="applicant-table">
+            <div class="table-header">
+                <h1>
+                    Applicants for jobs
+                </h1>
+            </div>
+            <div class="table-body">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Position</th>
+                        <th>Application Date</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if applications %}
+                        {% for application in applications %}
+                            <tr>
+                                <td> {{ application.candidate.firstname}} {{ application.candidate.lastname }}</td>
+                                <td> {{ application.candidate.city}}, {{ application.candidate.state }} </td>
+                                <td> {{ application.job.title }}</td>
+                                <td> {{ application.date_applied }} </td>
+                                <td>
+                                    <button class="applicant-table-resume-button">
+                                        {% if application.candidate.resume %}
+                                            <a href="{{ application.candidate.resume.url }}" target="_blank">Resume</a>
+                                        {% else %}
+                                            No Resume
+                                        {% endif %}
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

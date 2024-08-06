@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<br>
+<div class="contact-main">
+    <section class="contact">
+        <div class="contact-content">
+            <div class="contact-text">
+                <h1>Contact Us</h1>
+                <p>
+                    Got questions or need assistance? We're here to help! Our team at Jobfinity is dedicated to ensuring your job hunting experience is smooth and successful. Whether you need support navigating our platform or have inquiries about our services, feel free to reach out using the form below. We value your feedback and look forward to being your trusted partner in finding your ideal career opportunity. Get in touch today!
+                    <br>
+                    Subscribe to our newsletter to receive the latest updates on our services and offerings. >>>
+                </p>
+                <button class="subscribe">
+                    Subscribe
+                </button>
+            </div>
+            <img src="{% static '/app/images/contact-us.png' %}" alt="Image">
+        </div>
+    </section>
+
+    <div class="contact-info">
+        <div class="contact-info-text">
+            <div class="contact-info-left">
+                <h1>
+                    Get In Touch
+                </h1>
+                <form class="contact-info-form" action="">
+                    <div>
+                        <input type="text" placeholder="Enter your name">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Enter your email address">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Enter subject">
+                    </div>
+                    <div>
+                        <textarea name="" id="" cols="30" rows="5" placeholder="Enter your message"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+            <div class="map">
+                <h2>
+                    Find Us on the Map
+                </h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.458023331082!2d73.19346927518983!3d22.29851117968783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc5f65bc2a7e5%3A0x2082411428b284bf!2sFaculty%20of%20Technology%20and%20Engineering%20(FTE)%2C%20The%20Maharaja%20Sayajirao%20University%20of%20Baroda!5e0!3m2!1sen!2sin!4v1690811264615!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contact-info-right">
+                <h1>Contact Info</h1>
+                <br>
+                <div class="contact-location">
+                    <img src="{% static '/app/images/location.png' %}" alt="">
+                    Vadodara, Gujarat
+                </div>
+                <div class="contact-phone">
+                    <img src="{% static '/app/images/phone.png' %}" alt="">
+                    +91 7069414211
+                </div>
+                <div class="contact-mail">
+                    <img src="{% static '/app/images/mail.png' %}" alt="">
+                    pjeel122@gmail.com
+                </div>
+                <br>
+                <br>
+                <div class="contact-social">
+                    <h2>
+                        Social Platforms
+                    </h2>
+                    <div class="contact-social-icon">
+                        <a href="https://www.facebook.com/" target="_blank"><img src="{% static '/app/images/facebook.png' %}" alt="image"></a>
+                        <a href="https://www.instagram.com/" target="_blank"><img src="{% static '/app/images/instagram.png' %}" alt="image"></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><img src="{% static '/app/images/linkedin.png' %}" alt="image"></a>
+                        <a href="https://twitter.com/" target="_blank"><img src="{% static '/app/images/twitter.png' %}" alt="image"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}

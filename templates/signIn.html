@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <div class="sign-in-body">
+        <div class="sign-in-container">
+            <div class="sign-in-main">
+                <div class="sign-in">
+                    <form action="{% url 'login' %}" method="POST" class="sign-in-up-form sign-in-form"
+                          id="sign-in-form">
+                        {% csrf_token %}
+                        <h1 class="form-heading">
+                            Sign In
+                        </h1>
+                        <div class="sign-in-input-field">
+                    <span>
+                        <img src="{% static '/app/images/email.png' %}" alt="email">
+                    </span>
+                            <input type="email" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="sign-in-input-field">
+                    <span>
+                        <img src="{% static 'app/images/password.png' %}" alt="password">
+                    </span>
+                            <input type="password" placeholder="Password" name="password" required>
+                        </div>
+                        <input type="submit" value="Sign In" class="sign-in-up-button" id="sign-in">
+                        <p class="account-inquiry">
+                            new to Jobfinity?
+                            <a href="#" id="sign-up-button2">
+                                Sign Up
+                            </a>
+                        </p>
+                    </form>
+                    <form action="{% url 'signUp' %}" method="POST" class="sign-in-up-form sign-up-form"
+                          id="sign-up-form">
+                        {% csrf_token %}
+                        <h1 class="form-heading">
+                            Sign Up
+                        </h1>
+                        <div class="wrapper">
+                            <input type="radio" name="role" value="candidate" id="option-1">
+                            <input type="radio" name="role" value="company" id="option-2">
+                            <label for="option-1" class="option option-1">
+                                <span>Candidate</span>
+                            </label>
+                            <label for="option-2" class="option option-2">
+                                <span>Company</span>
+                            </label>
+                        </div>
+                        <div class="sign-in-input-field">
+                    <span>
+                        <img src="{% static '/app/images/user.png' %}" alt="name">
+                    </span>
+                            <input type="text" placeholder="First name the Last name" name="name" required>
+                        </div>
+                        <div class="sign-in-input-field">
+                    <span>
+                        <img src="{% static '/app/images/email.png' %}" alt="email">
+                    </span>
+                            <input type="email" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="sign-in-input-field">
+                    <span>
+                        <img src="{% static 'app/images/password.png' %}" alt="password">
+                    </span>
+                            <input type="password" placeholder="Password" name="password" required>
+                        </div>
+                        <input type="submit" value="Sign Up" id="sign-up" class="sign-in-up-button">
+                        <p class="account-inquiry">
+                            member of Jobfinity?
+                            <a href="#" id="sign-in-button2">
+                                Sign In
+                            </a>
+                        </p>
+                    </form>
+                </div>
+                <div class="main-panels">
+                    <div class="panel left-panel">
+                        <div class="panel-content">
+                            <h2>
+                                Member of Jobfinity?
+                            </h2>
+                            <p>
+                                Sign In and start applying to get your dream job
+                            </p>
+                            <button class="sign-in-up-button" id="sign-in-button">
+                                Sign In
+                            </button>
+                        </div>
+                        <img src="{% static '/app/images/sign-in.png' %}" alt="sign-in" class="panel-image">
+                    </div>
+                    <div class="panel right-panel">
+                        <div class="panel-content">
+                            <h2>
+                                New to Jobfinity?
+                            </h2>
+                            <p>
+                                Sign Up and start applying to get your dream job
+                            </p>
+                            <button class="sign-in-up-button" id="sign-up-button">
+                                Sign Up
+                            </button>
+                        </div>
+                        <img src="{% static '/app/images/sign-up.png' %}" alt="sign-up" class="panel-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

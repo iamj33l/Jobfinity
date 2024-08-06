@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="edit-company-profile-body">
+        <div class="edit-company-profile-main">
+            <section class="edit-company-profile-sub-main">
+                <div class="edit-company-profile">
+                    <div class="edit-company-profile-banner">
+                        <div class="edit-company-profile-card">
+                            {% if company %}
+                                <form action="{% url 'editCompanyProfileAttempt' primary_key=company.id %}" method="POST" enctype="multipart/form-data" class="edit-company-profile-form edit-company-profile-form-main" id="edit-company-profile-form">
+                                {% csrf_token %}
+                                    <h1 class="edit-company-profile-form-heading">
+                                        Edit Profile
+                                    </h1>
+                                    <div class="edit-company-profile-form-input-field">
+                                        <label class="edit-company-profile-form-label" for="profile"> Profile
+                                            Picture:(only .png, .jpeg, .jpg are allowed) </label>
+                                        <input type="file" name="profile" accept=".png, .jpg, .jpeg">
+                                    </div>
+                                    <div class="edit-company-profile-form-input-field">
+                                        <input type="text" name="companyname" value="{{ company.company_name }}"
+                                               placeholder="Company Name">
+                                    </div>
+                                    <div class="edit-company-profile-form-input-field">
+                                        <textarea name="about" id="" cols="60" rows="10"
+                                                  placeholder="About(max 150 characters)"
+                                                  maxlength="350">{{ company.about }}</textarea>
+                                    </div>
+                                    <div class="edit-company-profile-form-input-field">
+                                        <input type="text" name="contact" value="{{ company.contact }}"
+                                               placeholder="contact(+91 00000 00000)">
+                                    </div>
+                                    <div class="edit-company-profile-form-input-field">
+                                        <textarea name="address" id="" cols="60" rows="5"
+                                                  placeholder="Address">{{ company.address }}</textarea>
+                                    </div>
+                                    <div class="edit-company-profile-form-input-field">
+                                        <input type="text" name="city" value="{{ company.city }}" placeholder="City">
+                                    </div>
+                                    <div class="edit-company-profile-form-input-field">
+                                        <input type="text" name="state" value="{{ company.state }}" placeholder="State">
+                                    </div>
+                                    <div class="edit-company-profile-form-input-field">
+                                        <input type="text" name="website" value="{{ company.website }}"
+                                               placeholder="Website">
+                                    </div>
+                                    <input type="submit" value="Update" class="edit-company-profile-form-button" id="edit-company-profile-form-button">
+                                </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+{% endblock %}

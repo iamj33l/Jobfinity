@@ -1,0 +1,145 @@
+.edit-candidate-profile-body {
+    margin: 130px 0 50px 0;
+    width: 100%;
+}
+
+.edit-candidate-profile-sub-main {
+    margin: 0 80px 10px 80px;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+}
+
+.edit-candidate-profile {
+    margin: 15px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.edit-candidate-profile .edit-candidate-profile-banner {
+    display: grid;
+    gap: 18px;
+}
+
+.edit-candidate-profile-banner .edit-candidate-profile-card {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    background: #3c4c56;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+}
+
+.edit-candidate-profile-card .job-card-img img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    float: left;
+    padding: 10px;
+    margin: 5px 30px 5px 10px;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.edit-candidate-profile-card {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.edit-candidate-profile-card .edit-candidate-profile-card-text {
+    padding: 0 15px;
+    width: 100%;
+}
+
+.edit-candidate-profile-card .edit-candidate-profile-card-text h1 {
+    font-size: 25px;
+    color: var(--main-color);
+    font-weight: 500;
+}
+
+.edit-candidate-profile-card .edit-candidate-profile-card-text h2 {
+    font-size: 20px;
+    color: var(--main-color);
+    font-weight: 300;
+    margin: 5px 0;
+}
+
+form.edit-candidate-profile-form-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-width: 238px;
+    padding: 25px;
+}
+
+.edit-candidate-profile-form-heading {
+    font-size: 36px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.edit-candidate-profile-form-input-field {
+    margin: 15px;
+    width: 100%;
+}
+
+.edit-candidate-profile-form-input-field input,  .edit-candidate-profile-form-input-field textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    outline: none;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.edit-candidate-profile-form-gender {
+    width: 100%;
+    margin: 12px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    outline: none;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.edit-candidate-profile-form-job-type option {
+    background-color: #3c4c56;
+    color: white;
+}
+
+.edit-candidate-profile-form-button {
+    width: 140px;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    background: var(--main-color);
+    color: var(--text-color);
+    font-size: 18px;
+    margin: 25px 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+
+.edit-candidate-profile-form-button:hover {
+    cursor: pointer;
+}
