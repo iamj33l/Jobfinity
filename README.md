@@ -60,3 +60,4 @@ Jobfinity is a web application that allows candidates to apply for jobs and comp
 4. **Push to the branch**: `git push origin feature-name`.
 5. **Create a pull request**.
 
+###### Made with ❤️ by [Jeel Patel](https://github.com/iamj33l)
